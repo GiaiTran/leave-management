@@ -44,6 +44,11 @@ namespace leave_management.Repository
             
         }
 
+        public bool isExists(int id)
+        {
+            return _db.LeaveType.Any(q => q.Id == id);
+        }
+
         public bool Save()
         {
             return _db.SaveChanges() > 0;
